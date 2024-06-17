@@ -34,6 +34,7 @@ export default function ProductPage({product,category}) {
   const {addProduct} = useContext(CartContext);
   return (
     <div>
+   
       <Header />
       <Center>
         <ColWrapper>
@@ -43,9 +44,19 @@ export default function ProductPage({product,category}) {
           <div>
             <Title>{product.title}</Title>
             <p>{product.description}</p>
+            <p>{product.properties[1]}</p>
             <p>{category.name}</p>
-            <p>{`${category.properties[0].values}${" "}`}</p>
-            <p>{`${category.properties[0].values[0]}${" "}`}</p>
+            <div className="blog-list">
+        {category.properties.map(blog => (
+          <div className="blog-preview" key={blog.name} >
+             <p>{ blog.name}-{blog.values}</p>
+         
+         
+         
+          </div>
+        ))}
+      </div>
+          
             <PriceRow>
               <div>
                 <Price>${product.price}</Price>
