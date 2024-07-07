@@ -8,16 +8,17 @@ export default function HomePage({featuredProduct,featuredProduct2,newProducts})
   return (
     <div>
       <Header />
+      <div className="px-1">
       <Featured product={featuredProduct} />
       <NewProducts products={newProducts} />
       <NewProducts products={featuredProduct2} />
-     
+      </div>
     </div>
   );
 }
 
 export async function getServerSideProps() {
-  const featuredProductId = '665fb000c52420c56aa533e2';
+  const featuredProductId = '6685ed2804ad5ce120044590';
   const featuredProductId2 = '665faff2c52420c56aa533db';
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductId);

@@ -62,12 +62,12 @@ export default function Featured({product}) {
     addProduct(product._id);
   }
   return (
-    <Bg>
+    <div className="flex w-[100%] bg-slate-700 py-[120px] ">
       <Center>
         <ColumnsWrapper>
           <Column>
             <div>
-              <Title>{product.title}</Title>
+              <div className="w-[100%] h-min"><h1 className="w-[100%] font-bold text-lg">{product.title.slice(0, 10)+'...'}</h1></div>
               <Desc>{product.description}</Desc>
               <ButtonsWrapper>
                 <ButtonLink href={'/product/'+product._id} outline={1} white={1}>Read more</ButtonLink>
@@ -79,11 +79,11 @@ export default function Featured({product}) {
             </div>
           </Column>
           <Column>
-            <img src="https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png" alt=""/>
+            <img className="w-[400px]" src="https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png" alt=""/>
           </Column>
         </ColumnsWrapper>
       </Center>
 
-    </Bg>
+    </div>
   );
 }
