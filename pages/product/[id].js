@@ -27,7 +27,7 @@ export default function ProductPage({product,category}) {
           <div>
             <Title>{product.title}</Title>
             <p>{product.description}</p>
-           
+   
           
             
             <div className="blog-list">
@@ -54,15 +54,14 @@ export default function ProductPage({product,category}) {
               <h2 className=" text-2xl font-bold">GENERAL</h2>
             </td>
           </tr>
-
+   
           <tr className="flex h-full  bg-[#0000001e]">
-            <td className="w-[299px] font-medium max-[425px]:text-sm"> 
-        {category.properties.map(blog => (
-          <div className="blog-preview" key={blog.name}>
-             <p>{blog.name}</p>
+            
+         <td className="max-w-[1200px] w-full">{Object.keys(product.properties).map(blog => (
+          <div className="blog-preview" key={blog} >
+             <p>{blog}</p>
           </div>
         ))}</td>
-        
             <td className="max-w-[1200px] w-full">{Object.values(product.properties).map(blog => (
           <div className="blog-preview" key={blog} >
              <p>{blog}</p>
@@ -72,7 +71,7 @@ export default function ProductPage({product,category}) {
           </tbody>
         </table>
       </Center>
-      
+             
      
     
     </div>
