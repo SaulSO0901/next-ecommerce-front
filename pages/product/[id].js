@@ -26,8 +26,12 @@ export default function ProductPage({product,category}) {
           </WhiteBox>
           <div>
             <Title>{product.title}</Title>
-            <p>{product.description}</p>
-   
+            <ul className="h-72 list-disc">
+              
+            <li className="ml-4"><p className="">{product.description.replace(/\./g, "\n")}</p></li>
+            <li className="ml-4"><p className="">{product.description1}</p></li>
+            <li className="ml-4"><p className="">{product.description2}</p></li>
+            </ul>
           
             
             <div className="blog-list">

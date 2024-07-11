@@ -8,13 +8,13 @@ import Title from "@/components/Title";
 
 export default function ProductsPage({products}) {
   return (
-    <>
+    <div>
       <Header/>
       <Center>
         <Title>All products</Title>
         <ProductsGrid products={products} />
       </Center>
-    </>
+    </div>
   );
 }
 
