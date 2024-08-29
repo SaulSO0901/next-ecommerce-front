@@ -8,13 +8,15 @@ import WhiteBox from "@/components/WhiteBox";
 import ProductImages from "@/components/ProductImages";
 import Button from "@/components/Button";
 import CartIcon from "@/components/icons/CartIcon";
-import {useContext} from "react";
+import {useContext,useState} from "react";
 import {CartContext} from "@/components/CartContext";
 
 
 
 export default function ProductPage({product,category}) {
   const {addProduct} = useContext(CartContext);
+
+
   return (
     <div>
    
@@ -26,11 +28,90 @@ export default function ProductPage({product,category}) {
           </WhiteBox>
           <div>
             <Title>{product.title}</Title>
-            <ul className="h-72 list-disc">
+            <p className="">{product.description.replace(/\./g, "\n")}</p>
+            <ul className="h-72">
               
-            <li className="ml-4"><p className="">{product.description.replace(/\./g, "\n")}</p></li>
-            <li className="ml-4"><p className="">{product.description1}</p></li>
-            <li className="ml-4"><p className="">{product.description2}</p></li>
+           
+
+            {!!product.feature1 &&
+   <li className="ml-4 list-disc">
+         <p>{product.feature1}</p>
+   </li>
+   
+}
+
+{!!product.feature2 &&
+   <li className="ml-4 list-disc">
+         <p>{product.feature2}</p>
+   </li>
+}
+{!!product.feature3 &&
+   <li className="ml-4 list-disc">
+         <p>{product.feature3}</p>
+   </li>
+}
+{!!product.feature4 &&
+   <li className="ml-4 list-disc">
+         <p>{product.feature4}</p>
+   </li>
+}
+
+{!!product.feature5 &&
+   <li className="ml-4 list-disc">
+         <p>{product.feature5}</p>
+   </li>
+}
+{!!product.feature6 &&
+   <li className="ml-4 list-disc">
+         <p>{product.feature6}</p>
+   </li>
+}
+{!!product.feature7 &&
+   <li className="ml-4 list-disc">
+         <p>{product.feature7}</p>
+   </li>
+}
+{!!product.feature8 &&
+   <li className="ml-4 list-disc">
+         <p>{product.feature8}</p>
+   </li>
+}
+{!!product.feature9 &&
+   <li className="ml-4 list-disc">
+         <p>{product.feature9}</p>
+   </li>
+}
+            {!!product.features1 &&
+   <li className="ml-4 list-disc">
+         <p>{product.features1}</p>
+         <img src={product.images[0]}></img>
+   </li>
+}
+{!!product.features2 &&
+   <li className="ml-4 list-disc">
+         <p>{product.features2}</p>
+         <img src={product.images[1]}></img>
+   </li>
+}
+{!!product.features3 &&
+   <li className="ml-4 list-disc">
+         <p>{product.features3}</p>
+         <img src={product.images[2]}></img>
+   </li>
+}
+            {!!product.features4 &&
+   <li className="ml-4 list-disc">
+         <p>{product.features4}</p>
+         <img src={product.images[3]}></img>
+   </li>
+}
+{!!product.features5 &&
+   <li className="ml-4 list-disc">
+         <p>{product.features5}</p>
+         <img src={product.images[4]}></img>
+   </li>
+}
+            
             </ul>
           
             
@@ -39,7 +120,7 @@ export default function ProductPage({product,category}) {
  
       </div>
      
-            <div>
+            <div className="mt-[3800px]">
               <div>
                 <p>${product.price}</p>
               </div>
