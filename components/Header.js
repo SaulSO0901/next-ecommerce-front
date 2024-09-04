@@ -66,7 +66,7 @@ export default function Header() {
   const {cartProducts} = useContext(CartContext);
   const [mobileNavActive,setMobileNavActive] = useState(false);
   return (
-    <StyledHeader>
+    <StyledHeader className="mb-[100px]">
       <Center>
         <Wrapper>
           <Logo href={'/'}>Ecommerce</Logo>
