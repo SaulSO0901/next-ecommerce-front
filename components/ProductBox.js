@@ -58,23 +58,24 @@ const Price = styled.div`
   }
 `;
 
-export default function ProductBox({_id,title,description,price,images}) {
+export default function ProductBox({_id,title,price,images}) {
   const {addProduct} = useContext(CartContext);
+  let name={title};
   const url = '/product/'+_id;
   return (
-    <ProductWrapper>
+    <ProductWrapper className="h-60">
       <WhiteBox href={url}>
-        <div>
-          <img src={images?.[0]} alt=""/>
+        <div className="absolute w-52 p-4 bg-white">
+          <img className="w-30 mx-auto" src={images?.[0]} alt=""/>
         </div>
       </WhiteBox>
       <ProductInfoBox>
-        <Title href={url}>{title}</Title>
-        <PriceRow>
+        <div className="relative h-12 z-0 text-center" href={url}><a className="-z-10">{title}</a></div>
+        <PriceRow className="flex-col w-44 absolute  h-22 pb-6  bg-white z-10">
           <Price>
             ${price}
           </Price>
-          <Button block onClick={() => addProduct(_id)} primary outline>
+          <Button  block onClick={() => addProduct(_id)} primary outline>
             Add to cart
           </Button>
         </PriceRow>

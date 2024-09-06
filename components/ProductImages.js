@@ -33,7 +33,7 @@ const BigImageWrapper = styled.div`
 export default function ProductImages({images}) {
   const [activeImage,setActiveImage] = useState(images?.[0]);
   return (
-    <div className="flex w-max-[700px] w-full mx-auto mt-[20px]  ">
+    <div className="flex w-max-[700px] w-full h-[400px] mx-auto mt-[20px]  ">
      
       <ImageButtons className="flex-col max-w-[50px] w-full ">
         {images.map(image => (
@@ -46,7 +46,7 @@ export default function ProductImages({images}) {
         ))}
       </ImageButtons>
       <BigImageWrapper className="w-full ">
-        <BigImage className="h-full  mx-auto p-4" src={activeImage} />
+        <BigImage className="h-full  mx-auto p-10" src={activeImage} />
       </BigImageWrapper>
     </div>
   );
