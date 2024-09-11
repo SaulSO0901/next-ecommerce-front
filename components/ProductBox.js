@@ -60,18 +60,18 @@ const Price = styled.div`
 
 export default function ProductBox({_id,title,price,images}) {
   const {addProduct} = useContext(CartContext);
-  let name={title};
+
   const url = '/product/'+_id;
   return (
     <ProductWrapper className="h-60">
       <WhiteBox href={url}>
         <div className="absolute w-52 p-4 bg-white">
-          <img className="w-30 mx-auto" src={images?.[0]} alt=""/>
+          <img className="w-30 mt-8 mx-auto" src={images?.[0]} alt=""/>
         </div>
       </WhiteBox>
       <ProductInfoBox>
         <div className="relative h-12 z-0 text-center" href={url}><a className="-z-10">{title}</a></div>
-        <PriceRow className="flex-col w-44 absolute  h-22 pb-6  bg-white z-10">
+        <PriceRow className="flex-col w-44 absolute  h-[114px] pb-12  bg-white z-10">
           <Price>
             ${price}
           </Price>

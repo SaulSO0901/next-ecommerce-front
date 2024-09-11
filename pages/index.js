@@ -9,10 +9,11 @@ export default function HomePage({featuredProduct,featuredProduct2,newProducts})
   return (
     <div>
       <Header />
-      <div className="px-1">
       <Featured product={featuredProduct}/>
+      <div className="max-w-[1280px] w-full mx-auto px-1">
+      <h2 className="my-[40px] text-3xl text-center font-semibold">NEW ARRRIVALS</h2>
       <NewProducts products={newProducts}/>
-      <NewProducts products={featuredProduct2}/>
+
       <Footer/>
       </div>
     </div>
@@ -21,15 +22,12 @@ export default function HomePage({featuredProduct,featuredProduct2,newProducts})
 
 export async function getServerSideProps() {
   const featuredProductId = '6685ed2804ad5ce120044590';
-  const featuredProductId2 = '665faff2c52420c56aa533db';
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductId);
-  const featuredProduct2 = await Product.find({},null,{'category': featuredProductId2,limit:8});
-  const newProducts = await Product.find({}, null, {sort: {'_id':-1}, limit:8});
+  const newProducts = await Product.find({}, null, {sort: {'_id':-1}, limit:16});
   return {
     props: {
       featuredProduct: JSON.parse(JSON.stringify(featuredProduct)),
-      featuredProduct2: JSON.parse(JSON.stringify(featuredProduct2)),
       newProducts: JSON.parse(JSON.stringify(newProducts)),
     },
   };

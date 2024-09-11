@@ -104,7 +104,7 @@ export default function ProductPage({ product, category, newProducts }) {
           <Title className="my-6 pb-10 text-3xl text-center font-semibold border-b-[.7px] border-b-C7C5C1">
             <h1>Description</h1>
           </Title>
-          <p className="px-20 text-lg text-justify ">{product.description}</p>
+          <p className="px-20  text-lg text-justify ">{product.description}</p>
         </div>
 
         <div className="flex-col">
@@ -113,31 +113,31 @@ export default function ProductPage({ product, category, newProducts }) {
           </Title>
 
           {!!product.features1 && (
-            <div className="flex max-h-[500px] h-full ml-4 items-center ">
-              <div className="max-w-[600px] w-full h-full text-justify border-r-[.7px] border-r-C7C5C1">
-                <p className="h-[400px] p-10 mx-a text-2xl">
+            <div className="flex max-h-[500px] h-full ml-4 items-center border-b-[.7px] border-b-C7C5C1 ">
+              <div className="max-w-[600px] w-full h-full text-justify ">
+                <p className="max-w-[500px] w-full h-[400px] p-10 text-2xl">
                   {product.features1}
                 </p>
               </div>
 
               <div className="max-w-[600px] w-full">
                 <img
-                  className="max-w-[250px] w-full h-[400px]  mx-auto "
+                  className="max-w-[250px] w-full h-[400px] p-6  mx-auto "
                   src={product.images[0]}
                 ></img>
               </div>
             </div>
           )}
           {!!product.features2 && (
-            <div className="flex max-h-[500px] h-full ml-4  items-center ">
-              <div className="max-w-[600px] w-full border-r-[.7px] border-r-C7C5C1">
+            <div className="flex max-h-[500px] h-full ml-4  items-center border-b-[.7px] border-b-C7C5C1 ">
+              <div className="max-w-[600px] w-full ">
                 <img
-                  className="max-w-[250px] w-full h-[400px]  mx-auto "
+                  className="max-w-[250px] w-full h-[400px] p-6  mx-auto "
                   src={product.images[1]}
                 ></img>
               </div>
-              <div className="max-w-[600px] w-full h-full text-justify border-r-[.7px] border-r-C7C5C1">
-                <p className="h-[400px] p-10 mx-a text-2xl">
+              <div className="max-w-[600px] w-full h-full text-justify ">
+                <p className="max-w-[500px] w-full h-[400px] p-10  text-2xl">
                   {product.features2}
                 </p>
               </div>
@@ -145,16 +145,16 @@ export default function ProductPage({ product, category, newProducts }) {
           )}
 
           {!!product.features3 && (
-            <div className="flex max-h-[500px] h-full ml-4  items-center  ">
-              <div className="max-w-[600px] w-full h-full text-justify border-r-[.7px] border-r-C7C5C1">
-                <p className="h-[400px] p-10 mx-a text-2xl">
+            <div className="flex max-h-[500px] h-full ml-4  items-center border-b-[.7px] border-b-C7C5C1  ">
+              <div className="max-w-[600px] w-full h-full text-justify ">
+                <p className="h-[400px] p-10  text-2xl">
                   {product.features3}
                 </p>
               </div>
 
               <div className="max-w-[600px] w-full">
                 <img
-                  className="max-w-[250px] w-full h-[400px]  mx-auto "
+                  className="max-w-[250px] w-full h-[400px] p-4  mx-auto "
                   src={product.images[2]}
                 ></img>
               </div>
@@ -162,14 +162,14 @@ export default function ProductPage({ product, category, newProducts }) {
           )}
           {!!product.features4 && (
             <div className="flex max-h-[500px] h-full ml-4  items-center  ">
-              <div className="max-w-[600px] w-full border-r-[.7px] border-r-C7C5C1">
+              <div className="max-w-[600px] w-full border-b-[.7px] border-b-C7C5C1">
                 <img
                   className="max-w-[250px] w-full h-[400px]  mx-auto "
                   src={product.images[3]}
                 ></img>
               </div>
-              <div className="max-w-[600px] w-full h-full text-justify border-r-[.7px] border-r-C7C5C1">
-                <p className="h-[400px] p-10 mx-a text-2xl">
+              <div className="max-w-[600px] w-full h-full text-justify border-b-[.7px] border-b-C7C5C1">
+                <p className="max-w-[500px] w-full h-[400px] p-10 mx-a text-2xl">
                   {product.features4}
                 </p>
               </div>
@@ -177,8 +177,8 @@ export default function ProductPage({ product, category, newProducts }) {
           )}
           {!!product.features5 && (
             <div className="flex max-h-[500px] h-full ml-4  items-center  ">
-              <div className="max-w-[600px] w-full h-full text-justify border-r-[.7px] border-r-C7C5C1">
-                <p className="h-[400px] p-10 mx-a text-2xl">
+              <div className="max-w-[600px] w-full h-full text-justify border-b-[.7px] border-b-C7C5C1">
+                <p className="max-w-[500px] w-full h-[400px] p-10 mx-a text-2xl">
                   {product.features5}
                 </p>
               </div>
