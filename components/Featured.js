@@ -67,8 +67,8 @@ export default function Featured({product}) {
         <ColumnsWrapper>
           <Column>
             <div>
-              <div className="w-[100%] h-min"><h1 className="w-[100%] font-bold text-lg">{product.title.slice(0, 10)+'...'}</h1></div>
-              <Desc>{product.description}</Desc>
+              <div className="w-[100%] h-min"><h1 className="w-[100%] font-bold text-lg">{product.title.slice(0, 38)+'...'}</h1></div>
+              <Desc>{product.description.slice(0, 162)+'.'}</Desc>
               <ButtonsWrapper>
                 <ButtonLink href={'/product/'+product._id} outline={1} white={1}>Read more</ButtonLink>
                 <Button white onClick={addFeaturedToCart}>
@@ -79,7 +79,7 @@ export default function Featured({product}) {
             </div>
           </Column>
           <Column>
-            <img className="w-[400px]" src="https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png" alt=""/>
+            <img className="w-[400px]" src="https://next-ecommerce-09.s3.amazonaws.com/1726097354674.png" alt=""/>
           </Column>
         </ColumnsWrapper>
       </Center>

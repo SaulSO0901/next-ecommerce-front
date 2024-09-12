@@ -1,10 +1,9 @@
-import Center from "@/components/Center";
+import styled from "styled-components";
 import Header from "@/components/Header";
 import Title from "@/components/Title";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
 import { Category } from "@/models/Category";
-import WhiteBox from "@/components/WhiteBox";
 import ProductImages from "@/components/ProductImages";
 import Button from "@/components/Button";
 import CartIcon from "@/components/icons/CartIcon";
@@ -12,7 +11,10 @@ import { useContext, useState } from "react";
 import { CartContext } from "@/components/CartContext";
 import NewProducts from "@/components/NewProducts";
 import Footer from "@/components/Footer";
-
+const Features = styled.div`
+    
+  
+  `;
 export default function ProductPage({ product, category, newProducts }) {
   const { addProduct } = useContext(CartContext);
 
@@ -22,10 +24,10 @@ export default function ProductPage({ product, category, newProducts }) {
       <div className="max-w-[1200px] w-full mx-auto">
       <div className="flex-col max-w-[1200px] w-full mx-auto border-[.7px] border-C7C5C text-[#747474] ">
         <div className="w-full border-b-[.7px] border-b-C7C5C">
-          <div className="flex w-[80%] mx-auto mt-[22px] pb-10  ">
+          <div className="flex w-[80%] mx-auto mt-[22px] pb-10 max-[768px]:flex max-[768px]:flex-col  ">
             <ProductImages images={product.images} />
 
-            <div className="max-w-[700px] w-full ml-[60px] ">
+            <div className="max-w-[700px] w-full ml-[60px] max-[768px]:ml-0 max-[768px]:mt-20 ">
               <Title className=" mt-4 text-3xl font-semibold">
                 {product.title}
               </Title>
@@ -104,18 +106,18 @@ export default function ProductPage({ product, category, newProducts }) {
           <Title className="my-6 pb-10 text-3xl text-center font-semibold border-b-[.7px] border-b-C7C5C1">
             <h1>Description</h1>
           </Title>
-          <p className="px-20  text-lg text-justify ">{product.description}</p>
+          <p className="px-20  text-lg text-justify  max-[425px]:p-4  max-[425px]:text-base ">{product.description}</p>
         </div>
 
-        <div className="flex-col">
+        <div className="flex-col  max-[768px]:hidden">
           <Title className="mt-6 pb-10 text-3xl text-center font-semibold border-b-[.7px] border-b-C7C5C1 ">
             <h1>Features</h1>
           </Title>
 
           {!!product.features1 && (
-            <div className="flex max-h-[500px] h-full ml-4 items-center border-b-[.7px] border-b-C7C5C1 ">
+            <div className="flex max-h-[500px] h-full ml-4 items-center border-b-[.7px] border-b-C7C5C1  max-[425px]:h-[800px]  max-[425px]:flex-col max-[425px]:ml-0  ">
               <div className="max-w-[600px] w-full h-full text-justify ">
-                <p className="max-w-[500px] w-full h-[400px] p-10 text-2xl">
+                <p className="max-w-[500px] w-full h-[400px] p-10 text-2xl max-[425px]:p-4">
                   {product.features1}
                 </p>
               </div>
@@ -192,9 +194,102 @@ export default function ProductPage({ product, category, newProducts }) {
             </div>
           )}
         </div>
+
+       
+
+        <Features className="hidden  max-[768px]:flex max-[768px]:flex-col">
+          <Title className="mt-6 pb-10 text-3xl text-center font-semibold border-b-[.7px] border-b-C7C5C1 ">
+            <h1>Features</h1>
+          </Title>
+
+          {!!product.features1 && (
+            <div className="flex-col h-fit items-center border-b-[.7px] border-b-C7C5C1   ">
+              <div className="max-w-[600px] w-full mx-auto text-justify ">
+                <p className="max-w-[600px] w-full h-fit text-2xl p-4">
+                  {product.features1}
+                </p>
+              </div>
+
+              <div className="w-full">
+                <img
+                  className="max-w-[250px] w-full h-[400px] p-6  mx-auto "
+                  src={product.images[0]}
+                ></img>
+              </div>
+            </div>
+          )}
+
+            {!!product.features2 && (
+            <div className="flex-col h-fit items-center border-b-[.7px] border-b-C7C5C1   ">
+              <div className="max-w-[600px] w-full mx-auto text-justify ">
+              <p className="max-w-[600px] w-full h-fit text-2xl p-4">
+                  {product.features2}
+                </p>
+              </div>
+
+              <div className="w-full">
+                <img
+                  className="max-w-[250px] w-full h-[400px] p-6  mx-auto "
+                  src={product.images[1]}
+                ></img>
+              </div>
+            </div>
+          )}
+
+{!!product.features3 && (
+            <div className="flex-col h-fit items-center border-b-[.7px] border-b-C7C5C1   ">
+             <div className="max-w-[600px] w-full mx-auto text-justify ">
+             <p className="max-w-[600px] w-full h-fit text-2xl p-4">
+                  {product.features3}
+                </p>
+              </div>
+
+              <div className="w-full">
+                <img
+                  className="max-w-[250px] w-full h-[400px] p-6  mx-auto "
+                  src={product.images[2]}
+                ></img>
+              </div>
+            </div>
+          )}
+ {!!product.features4 && (
+            <div className="flex-col h-fit items-center border-b-[.7px] border-b-C7C5C1   ">
+             <div className="max-w-[600px] w-full mx-auto text-justify ">
+             <p className="max-w-[600px] w-full h-fit text-2xl p-4">
+                  {product.features4}
+                </p>
+              </div>
+
+              <div className="w-full">
+                <img
+                  className="max-w-[250px] w-full h-[400px] p-6  mx-auto "
+                  src={product.images[3]}
+                ></img>
+              </div>
+            </div>
+          )}
+
+{!!product.features5 && (
+            <div className="flex-col h-fit items-center border-b-[.7px] border-b-C7C5C1   ">
+             <div className="max-w-[600px] w-full mx-auto text-justify ">
+             <p className="max-w-[600px] w-full h-fit text-2xl p-4">
+                  {product.features5}
+                </p>
+              </div>
+
+              <div className="w-full">
+                <img
+                  className="max-w-[250px] w-full h-[400px] p-6  mx-auto "
+                  src={product.images[4]}
+                ></img>
+              </div>
+            </div>
+          )}
+
+        </Features>
       </div>
 
-      <table className="w-full  my-12 text-[#747474] font-semibold ">
+      <table className="w-full  my-12 text-[#747474] font-semibold  max-[425px]:mt-10 ">
         <tbody>
           <tr className="flex h-10  mt-6 mb-2 text-center  ">
             <td className="mx-auto">

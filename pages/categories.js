@@ -32,7 +32,7 @@ export default function HomePage({featuredProduct,laptopProduct,cellphoneProduct
 }
 
 export async function getServerSideProps() {
-  const featuredProductId = '6685ed2804ad5ce120044590';
+  const featuredProductId = '66e22811b97a4472674b7e39';
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductId);
   const cellphoneProduct = await Product. find({   
