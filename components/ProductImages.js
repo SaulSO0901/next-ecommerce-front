@@ -1,13 +1,6 @@
 import styled from "styled-components";
 import {useState} from "react";
 
-const Image = styled.img`
-    max-width: 100%;
-    max-height: 100%;
-  `;
-const BigImage = styled.img`
-  max-height: 400px;
-`;
 const ImageButtons = styled.div`
     display: flex;
     gap: 10px;
@@ -26,15 +19,13 @@ const ImageButton = styled.div`
     cursor: pointer;
     border-radius: 5px;
   `;
-const BigImageWrapper = styled.div`
-  text-align: center;
-`;
+
 
 export default function ProductImages({images}) {
   const [activeImage,setActiveImage] = useState(images?.[0]);
+
   return (
     <div className="w-full">
-
      <div className="flex w-max-[700px] w-full h-[400px] mx-auto mt-[20px] max-[768px]:hidden ">
       <ImageButtons className="flex-col max-w-[50px] w-full ">
         {images.map(image => (
@@ -42,26 +33,26 @@ export default function ProductImages({images}) {
             key={image}
             active={image===activeImage}
             onClick={() => setActiveImage(image)}>
-            <Image className=" mx-auto" src={image} alt=""/>
+            <img className=" mx-auto w-full h-full" src={image} alt=""/>
           </ImageButton>
         ))}
       </ImageButtons>
-      <BigImageWrapper className="w-full ">
-        <BigImage className="h-full  mx-auto p-10" src={activeImage} />
-      </BigImageWrapper>
+      <div className="w-full text-center ">
+        <img className="h-full mx-auto p-10" src={activeImage} alt="bigImg" />
+      </div>
       </div>
 
       <div  className="hidden  w-max-[700px] w-full h-[400px] mx-auto mt-[20px] max-[768px]:flex flex-col  ">
-      <BigImageWrapper className="w-full ">
-        <BigImage className="h-full  mx-auto p-10" src={activeImage} />
-      </BigImageWrapper>
+      <div className="w-full text-center ">
+        <img className="h-full  mx-auto p-10" src={activeImage} alt="bigImg" />
+      </div>
       <ImageButtons className="flex max-w-[200px] w-full mx-auto items-center justify-center ">
         {images.map(image => (
           <ImageButton 
             key={image}
             active={image===activeImage}
             onClick={() => setActiveImage(image)}>
-            <Image className="mx-auto" src={image} alt=""/>
+     <img className=" mx-auto w-full h-full" src={image} alt=""/>
           </ImageButton>
         ))}
       </ImageButtons>
