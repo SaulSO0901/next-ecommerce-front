@@ -44,9 +44,9 @@ export default function ProductImages({images}) {
 
       <div  className="hidden  w-max-[700px] w-full h-[400px] mx-auto mt-[20px] max-[768px]:flex flex-col  ">
       <div className="w-full text-center ">
-        <img className="h-full  mx-auto p-10" src={activeImage} alt="bigImg" />
+        <img className="h-[400px]  mx-auto p-10" src={activeImage} alt="bigImg" />
       </div>
-      <ImageButtons className="flex max-w-[200px] w-full mx-auto items-center justify-center ">
+      <ImageButtons className="flex max-w-[400px] w-full mx-auto items-center justify-center ">
         {images.map(image => (
           <ImageButton 
             key={image}

@@ -6,19 +6,7 @@ import CartIcon from "@/components/icons/CartIcon";
 import {useContext} from "react";
 import {CartContext} from "@/components/CartContext";
 
-const Bg = styled.div`
-  background-color: #222;
-  color:#fff;
-  padding: 50px 0;
-`;
-const Title = styled.h1`
-  margin:0;
-  font-weight:normal;
-  font-size:1.5rem;
-  @media screen and (min-width: 768px) {
-    font-size:3rem;
-  }
-`;
+
 const Desc = styled.p`
   color:#aaa;
   font-size:.8rem;
